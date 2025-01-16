@@ -13,4 +13,14 @@ public class Vector {
   public @NotNull String[] getElements () {
     return elements;
   }
+
+  public void add (@NotNull String element) {
+    for (int i = 0; i < this.elements.length; i++) {
+      if (this.elements[i] == null) {
+        this.elements[i] = element;
+        return;
+      }
+    }
+    throw new ArrayIndexOutOfBoundsException("no space available to add more elements");
+  }
 }
