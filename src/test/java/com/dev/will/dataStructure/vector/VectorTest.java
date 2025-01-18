@@ -58,4 +58,19 @@ public class VectorTest {
     assertEquals("Element1", vector.getElements()[0]);
     assertNull(vector.getElements()[1]);
   }
+
+  @Test
+  void testReadAllElements () {
+    @NotNull Vector vector = new Vector(5);
+
+    vector.add("Element1");
+    vector.add("Element2");
+    vector.add("Element3");
+
+    assertEquals("Element1", vector.getElements()[0]);
+    assertEquals("Element2", vector.getElements()[1]);
+    assertEquals("Element3", vector.getElements()[2]);
+
+    System.out.println(vector.toString());
+  }
 }
