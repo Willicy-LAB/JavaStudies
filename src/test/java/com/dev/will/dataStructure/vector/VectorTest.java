@@ -115,4 +115,23 @@ public class VectorTest {
 
     assertEquals(true, vector.contains("ELEMENT1"));
   }
+
+  @Test
+  void testAddByIndex () {
+    @NotNull Vector vector = new Vector(10);
+
+    vector.add("B");
+    vector.add("C");
+    vector.add("D");
+    vector.add("F");
+    vector.add("G");
+    vector.add("H");
+    System.out.println(vector.toString());
+
+    vector.add(0, "A");
+    System.out.println(vector.toString());
+
+    vector.add(4, "E");
+    System.out.println(vector.toString());
+  }
 }
