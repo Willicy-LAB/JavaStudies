@@ -30,7 +30,7 @@ public class Vector {
   */
 
   /* second version of method add
-  public void add(@NotNull String element) {
+  public void add (@NotNull String element) {
     if (this.size < this.elements.length) {
       this.elements[this.size] = element;
       this.size = this.size + 1;
@@ -43,7 +43,7 @@ public class Vector {
   */
 
   // same method add v2 but with a little modification
-   public boolean add(@NotNull String element) {
+   public boolean add (@NotNull String element) {
     if (this.size < this.elements.length) {
       this.elements[this.size] = element;
       this.size = this.size + 1;
@@ -82,5 +82,15 @@ public class Vector {
       throw new IllegalArgumentException("invalid index");
     }
     return this.elements[index];
+  }
+
+  public boolean contains (@NotNull String element) {
+    for (int i = 0; i < this.size; i++) {
+      if (this.elements[i].equalsIgnoreCase(element)) {
+        return true;
+      }
+    }
+
+    return false;
   }
  }
