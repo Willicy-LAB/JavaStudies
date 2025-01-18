@@ -29,7 +29,7 @@ public class Vector {
   }
   */
 
-  // second version of method add
+  /* second version of method add
   public void add(@NotNull String element) {
     if (this.size < this.elements.length) {
       this.elements[this.size] = element;
@@ -39,5 +39,18 @@ public class Vector {
     }
 
     throw new ArrayIndexOutOfBoundsException("no space available to add more elements");
+  }
+  */
+
+  // same method add v2 but with a little modification
+   public boolean add(@NotNull String element) {
+    if (this.size < this.elements.length) {
+      this.elements[this.size] = element;
+      this.size = this.size + 1;
+
+      return true;
+    }
+
+    return false;
   }
  }

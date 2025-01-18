@@ -46,7 +46,7 @@ public class VectorTest {
 
     assertEquals("Element1", vector.getElements()[0]);
     assertEquals("Element2", vector.getElements()[1]);
-    assertNull(vector.getElements()[2], "Exceeding capacity should not add new elements.");
+    assertNull(vector.getElements()[2], "exceeding capacity should not add new elements");
   }
 
   @Test
