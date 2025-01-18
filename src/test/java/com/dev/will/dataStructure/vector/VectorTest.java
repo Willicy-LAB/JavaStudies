@@ -134,4 +134,28 @@ public class VectorTest {
     vector.add(4, "E");
     System.out.println(vector.toString());
   }
+
+  @Test
+  void testMoreCapacity () {
+    @NotNull Vector vector = new Vector(3);
+
+    vector.add("B");
+    vector.add("C");
+    vector.add("D");
+    System.out.println(vector.toString());
+    System.out.println(vector.getElements().length);
+
+    vector.add("F");
+    vector.add("G");
+    System.out.println(vector.toString());
+    System.out.println(vector.getElements().length);
+
+    vector.add(0, "A");
+    System.out.println(vector.toString());
+
+    vector.add(4, "E");
+    System.out.println(vector.toString());
+
+    System.out.println(vector.getElements().length);
+  }
 }
