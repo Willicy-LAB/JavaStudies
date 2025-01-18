@@ -53,4 +53,8 @@ public class Vector {
 
     return false;
   }
+
+  public int getSize () {
+    return this.size;
+  }
  }
