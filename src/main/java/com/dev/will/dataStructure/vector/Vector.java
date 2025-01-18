@@ -93,4 +93,17 @@ public class Vector {
 
     return false;
   }
+
+  public void  add (int index, @NotNull String element) {
+    if (!(index >= 0 && index < this.size)) {
+      throw new IllegalArgumentException("invalid index");
+    }
+
+    for (int i = this.size - 1; i >= index; i--) {
+      this.elements[i + 1] = this.elements[i];
+    }
+
+    this.elements[index] = element;
+    this.size = this.size + 1;
+  }
  }
