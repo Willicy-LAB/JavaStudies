@@ -44,6 +44,7 @@ public class Vector {
 
   // same method add v2 but with a little modification
    public boolean add (@NotNull String element) {
+    moreCapacity();
     if (this.size < this.elements.length) {
       this.elements[this.size] = element;
       this.size = this.size + 1;
@@ -95,6 +96,7 @@ public class Vector {
   }
 
   public void  add (int index, @NotNull String element) {
+    moreCapacity();
     if (!(index >= 0 && index < this.size)) {
       throw new IllegalArgumentException("invalid index");
     }
@@ -105,5 +107,17 @@ public class Vector {
 
     this.elements[index] = element;
     this.size = this.size + 1;
+  }
+
+  private void moreCapacity () {
+    if (this.size == this.elements.length) {
+      @NotNull String[] newElements = new String[this.elements.length * 2];
+      
+      for (int i = 0; i < this.elements.length; i++) {
+        newElements[i] = elements[i];
+      }
+
+      this.elements = newElements;
+    }
   }
  }
