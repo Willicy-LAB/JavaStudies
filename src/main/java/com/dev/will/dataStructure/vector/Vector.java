@@ -1,5 +1,7 @@
 package com.dev.will.dataStructure.vector;
 
+import java.util.Arrays;
+
 import org.jetbrains.annotations.NotNull;
 
 public class Vector {
@@ -56,5 +58,24 @@ public class Vector {
 
   public int getSize () {
     return this.size;
+  }
+
+  public @NotNull String toString () {
+    @NotNull StringBuilder stringBuilder = new StringBuilder();
+
+    stringBuilder.append("[");
+
+    for (int i = 0; i < this.size - 1; i++) {
+      stringBuilder.append(this.elements[i]);
+      stringBuilder.append(", ");
+    }
+
+    if (this.size > 0) {
+      stringBuilder.append(this.elements[this.size-1]);
+    }
+
+    stringBuilder.append("]");
+
+    return stringBuilder.toString();
   }
  }
