@@ -1,7 +1,5 @@
 package com.dev.will.dataStructure.vector;
 
-import java.util.Arrays;
-
 import org.jetbrains.annotations.NotNull;
 
 public class Vector {
@@ -77,5 +75,12 @@ public class Vector {
     stringBuilder.append("]");
 
     return stringBuilder.toString();
+  }
+
+  public @NotNull String getElementByIndex (int index) {
+    if (!(index >= 0 && index < this.size)) {
+      throw new IllegalArgumentException("invalid index");
+    }
+    return this.elements[index];
   }
  }
