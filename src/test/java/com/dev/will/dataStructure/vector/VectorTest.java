@@ -73,4 +73,27 @@ public class VectorTest {
 
     System.out.println(vector.toString());
   }
+
+  @Test
+  void testGetElementByIndex () {
+    @NotNull Vector vector = new Vector(3);
+
+    vector.add("Element1");
+    vector.add("Element2");
+    vector.add("Element3");
+
+    assertEquals("Element3", vector.getElementByIndex(2));
+    System.out.println(vector.getElementByIndex(2));
+  }
+
+  @Test
+  void textExceptionOfGetElementByIndex () {
+     @NotNull Vector vector = new Vector(3);
+
+    vector.add("Element1");
+    vector.add("Element2");
+    vector.add("Element3");
+
+    assertEquals("Element4", vector.getElementByIndex(3));
+  }
 }
