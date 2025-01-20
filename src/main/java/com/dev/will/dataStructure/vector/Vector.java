@@ -114,10 +114,22 @@ public class Vector {
       @NotNull String[] newElements = new String[this.elements.length * 2];
       
       for (int i = 0; i < this.elements.length; i++) {
-        newElements[i] = elements[i];
+        newElements[i] = this.elements[i];
       }
 
       this.elements = newElements;
     }
+  }
+
+  public void remove (int index) {
+    if (!(index >= 0 && index < this.size)) {
+      throw new IllegalArgumentException("invalid index");
+    }
+
+    for (int i = index; i < this.elements.length - 1; i++) {
+      this.elements[i] = this.elements[i + 1];
+    }
+
+    this.size = this.size - 1;
   }
  }
