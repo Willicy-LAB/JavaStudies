@@ -158,4 +158,23 @@ public class VectorTest {
 
     System.out.println(vector.getElements().length);
   }
+
+  @Test
+  void testRemove () {
+    @NotNull Vector vector = new Vector(3);
+
+    vector.add("A");
+    vector.add("B");
+    vector.add("C");
+    vector.add("D");
+    vector.add("E");
+    vector.add("F");
+
+    System.out.println(vector.toString());
+
+    vector.remove(0);
+    
+    System.out.println(vector.toString());
+    System.out.println(vector.getSize());
+  }
 }
