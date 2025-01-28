@@ -45,4 +45,16 @@ public class Stack<T> {
 
     return true;
   }
+
+  private void moreCapacity () {
+    if (this.size == this.elements.length) {
+      @NotNull T[] newElements = (T[]) new Object[this.elements.length * 3 / 2 + 1];
+
+      for (int i = 0; i < this.elements.length; ) {
+        newElements[i] = this.elements[i];
+      }
+
+      this.elements = newElements;
+    }
+  }
 }
