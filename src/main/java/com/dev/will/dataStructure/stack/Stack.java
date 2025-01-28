@@ -26,4 +26,23 @@ public class Stack<T> {
 
     return false;
   }
+  
+  public boolean add (int index, @NotNull T element) {
+    if (!(index >= 0 && index < size)) {
+      return false;
+    }
+
+    moreCapacity();
+
+    for (int i = this.size - 1; i >= index; ) {
+      this.elements[i + 1] = this.elements[i];
+
+      i = i - 1;
+    }
+
+    this.elements[index] = element;
+    this.size = size + 1;
+
+    return true;
+  }
 }
