@@ -57,4 +57,29 @@ public class Stack<T> {
       this.elements = newElements;
     }
   }
+
+  public int getSize() {
+    return size;
+  }
+
+  @Override
+  public @NotNull String toString () {
+    @NotNull StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("[");
+
+    for (int i = 0; i < this.size - 1; ) {
+      stringBuilder.append(this.elements[i]);
+      stringBuilder.append(", ");
+
+      i = i + 1;
+    }
+
+    if (this.size > 0) {
+      stringBuilder.append(this.elements[this.size - 1]);
+    }
+
+    stringBuilder.append("]");
+
+    return stringBuilder.toString();
+  }
 }
